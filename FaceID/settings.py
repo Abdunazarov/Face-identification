@@ -16,14 +16,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'recognize_app',
-    'users_app',
 
     'face_recognition'
 
 
 ]
 
-AUTH_USER_MODEL = 'users_app.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
