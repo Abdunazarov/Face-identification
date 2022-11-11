@@ -16,10 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'recognize_app',
-
     'face_recognition'
-
-
 ]
 
 
