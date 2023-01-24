@@ -1,0 +1,8 @@
+1) Zip fileni unzip qilgandan keyin, virtualenv yaratilishi kerak
+2) "python3 -m venv env" terminalda kiritilsa virtualenv yaratiladi
+3) "source env/bin/activate" kiritib, virtualenv ni aktivatsiya qilish kerak
+4) "pip install -r requirements.txt" ni kiritilsa kerakli modellar avtomatik ravishda o'tqiziladi
+5) Modellar o'tib bo'lgandan so'ng, terminalda:
+"./manage.py runserver" ni kiritib serverni aktivatsiya qilish kerak
+6) localhost:8000/faceID/ url boyicha Postmandan, post request qilish kerak. Postmanda "form-data"ga kirib, birinchisiga "file1" va ikkinchisiga "file2" yo'zib, kerakli rasimni tanlab olish kerak va post request yuborish kerak.
+Bu API agar rasim to'g'ri kelsa true, agar to'g'ri kemasa false qaytaradi
