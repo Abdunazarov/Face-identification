@@ -26,17 +26,20 @@ def faceID(request):
         original_img_encode = np.asarray(original_img)
 
 
-        face_locations = face_recognition.face_locations(camera_img_encode)
-        face_encodings = face_recognition.face_encodings(camera_img_encode, face_locations)
+        face_locations = face_recognition.face_locations(camera_img_encode, model='cnn')
+        face_encodings = face_recognition.face_encodings(camera_img_encode, face_locations)[0]
 
 
-        original_img_locations = face_recognition.face_locations(original_img_encode)
-        original_img_encodings = face_recognition.face_encodings(original_img_encode, original_img_locations)[0]
+        original_img_locations = face_recognition.face_locations(original_img_encode, model='cnn')
+        original_img_encodings = face_recognition.face_encodings(original_img_encode, original_img_locations)
 
-        result = face_recognition.compare_faces(original_img_encodings, face_encodings)
+
+        result = face_recognition.compare_faces(original_img_encodings, face_encodings, tolerance=0.5)
         data = {'Reponse': result[0]}
 
-    except:
+    except Exception as error:
         data = {'Response': 'Error occured'}
 
     return Response(data)
+
+
